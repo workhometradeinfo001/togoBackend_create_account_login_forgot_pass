@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: login_rf
+  profiles:
+    active: dev, mysql

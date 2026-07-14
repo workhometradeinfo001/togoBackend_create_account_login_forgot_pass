@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: ${ODBURL}
+    username: ${ODBUSERNAME}
+    password: ${ODBPASSWORD}
+  jpa:
+    hibernate.ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
