@@ -1,6 +1,6 @@
-name: Togo-Backend-Login-Regi-Forgotpass
+name: Togo-Backend-lrf
 
-on: 
+on:
   push:
     branches: ["main"]
   pull_request:
@@ -21,3 +21,6 @@ jobs:
           cache: maven
       - name: Build with mvn wrapper
         run: ./mvnw clean package
+
+      - name: Successfully runned
+        run: echo "Run Successfull"
