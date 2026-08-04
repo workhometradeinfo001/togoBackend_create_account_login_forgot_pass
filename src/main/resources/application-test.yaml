@@ -5,7 +5,7 @@ spring:
     activate:
       on-profile: test
   datasource:
-    url: ${ODBURL}
+    jdbc-url: ${ODBURL}
     username: ${ODBUSERNAME}
     password: ${ODBPASSWORD}
   jpa:
