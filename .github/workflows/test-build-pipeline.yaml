@@ -28,7 +28,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with mvn wrapper
-        run: ./mvn clean package -X
+        run: ./mvnw clean package -X
 
-      - name: Successfully runned
-        run: echo "Run Successfull"
+      - name: Successfully run
+        run: echo "Run Successfully"
