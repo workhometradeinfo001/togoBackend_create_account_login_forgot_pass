@@ -26,10 +26,10 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '21'
-          distribution: 'temurin'
+          distribution: 'java'
           cache: maven
       - name: Build with mvn wrapper
-        run: ./mvnw clean package -e
+        run: ./mvn clean package -X
 
       - name: Successfully runned
         run: echo "Run Successfull"
