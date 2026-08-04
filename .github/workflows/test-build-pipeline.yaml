@@ -2,9 +2,8 @@ name: Togo-Backend-lrf
 
 env:
   SPRING_PROFILES_ACTIVE: test
-  ODBURL: ${{secrets.ODBURL}}
-  ODBUSERNAME: ${{secrets.ODBUSERNAME}}
-  ODBPASSWORD: ${{secrets.ODBPASSWORD}}
+  ODBURL_TEST: ${{secrets.ODBURL_TEST}}
+  ODBUSERNAME_TEST: ${{secrets.ODBUSERNAME_TEST}}
   MAILFORSEND: ${{secrets.MAILFORSEND}}
   PASSMAILAPP: ${{secrets.PASSMAILAPP}}
   AMQPADDRESS: ${{secrets.AMQPADDRESS}}

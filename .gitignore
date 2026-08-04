@@ -18,8 +18,10 @@ target/
 *.iws
 *.iml
 *.ipr
-/src/main/resources/application-test.yaml
-/src/main/resources/application-test.yml
+/src/main/resources/application.yaml
+/src/main/resources/application-dev.yaml
+/src/main/resources/application-prod.yaml
+/src/main/resources/yaml-files
 
 ### NetBeans ###
 /nbproject/private/
