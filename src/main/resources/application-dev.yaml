@@ -1,6 +1,0 @@
-spring:
-  config:
-    import: "optional:classpath:/yaml-files/"
-
-server:
-  port: 8081
