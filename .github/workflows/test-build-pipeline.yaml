@@ -25,7 +25,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '21'
-          distribution: 'java'
+          distribution: 'temurin'
           cache: maven
       - name: Build with mvn wrapper
         run: ./mvn clean package -X
