@@ -1,9 +1,6 @@
 spring:
   application:
     name: login_rf_test
-  config:
-    activate:
-      on-profile: test
   datasource:
     jdbc-url: ${ODBURL}
     username: ${ODBUSERNAME}
