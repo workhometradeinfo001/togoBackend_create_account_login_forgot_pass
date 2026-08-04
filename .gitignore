@@ -18,6 +18,10 @@ target/
 *.iws
 *.iml
 *.ipr
+main/resources/yaml-files
+application.yaml
+application-dev.yaml
+application-prod.yaml
 
 ### NetBeans ###
 /nbproject/private/

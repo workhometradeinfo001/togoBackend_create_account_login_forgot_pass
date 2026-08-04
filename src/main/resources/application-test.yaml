@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: login_rf_test
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: ${secrets.ODBURL}
+    username: ${ODBUSERNAME}
+    password: ${ODBPASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show_sql: true
+  sql:
+    init:
+      mode: always
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAILFORSEND}
+    password: ${PASSMAILAPP}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  rabbitmq:
+    addresses: ${AMQPADDRESS}
+
+server:
+  port: 8081
