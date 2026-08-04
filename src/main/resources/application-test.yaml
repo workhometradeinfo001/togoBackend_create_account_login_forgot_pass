@@ -8,10 +8,14 @@ spring:
     jdbc-url: ${ODBURL}
     username: ${ODBUSERNAME}
     password: ${ODBPASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
     show_sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
   sql:
     init:
       mode: always
