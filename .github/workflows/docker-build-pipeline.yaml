@@ -3,7 +3,7 @@ name: Docker-Build-Store
 on:
   workflow_run:
     workflows:
-      - test-build-pipeline
+      - Togo-Backend-lrf
     types:
       - completed
 
