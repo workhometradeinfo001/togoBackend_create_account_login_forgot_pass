@@ -29,13 +29,13 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME_SERVICE_ONE }}:${{ github.sa }}
-            ${{ secrets.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME_SERVICE_ONE }}:${{ vars.IMAGE_VERSION_ONE }}
+            ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME_SERVICE_ONE }}:${{ github.sa }}
+            ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME_SERVICE_ONE }}:${{ env.IMAGE_VERSION_ONE }}
 
     # Deploy to container app
       - name: Deploy to azure web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: ${{ vars.IMAGE_NAME_SERVICE_ONE }}
-          images: '${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}'
+          app-name: ${{ env.IMAGE_NAME_SERVICE_ONE }}
+          images: '${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME_SERVICE_ONE }}:${{ github.sha }}'
 
