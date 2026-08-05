@@ -16,6 +16,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
+      - name: Docker build
+        run: docker build -t ${{ env.IMAGE_NAME_SERVICE_ONE }}:${{IMAGE_VERSION_ONE}}
+
       - name: Login into Azure Registry
         uses: docker/login-action@v4
         with:
