@@ -51,4 +51,11 @@ jobs:
           --registry-username ${{ secrets.ACR_USERNAME }} \
           --registry-password ${{ secrets.ACR_PASSWORD }} \
           --target-port 8081 \
-          --ingress external
+          --ingress external \
+          --env-vars \
+            ODBURL="${{ secrets.ODBURL }}" \
+            ODBUSERNAME="${{ secrets.ODBUSERNAME }}" \
+            ODBPASSWORD="${{ secrets.ODBPASSWORD }}" \
+            AMQPADDRESS="${{ secrets.AMQPADDRESS }}" \
+            MAILFORSEND="${{ secrets.MAILFORSEND }}" \
+            PASSMAILAPP="${{ secrets.PASSMAILAPP }}"
