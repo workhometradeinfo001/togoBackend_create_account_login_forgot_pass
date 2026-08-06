@@ -30,3 +30,14 @@ jobs:
         run: |
           docker push ${{ secrets.ACR_LOGIN_SERVER }}/${{ secrets.IMAGE_NAME }}:${{ secrets.IMAGE_VERSION_ONE }}
 
+      - name: Deploy into container
+        run: |
+          az containerapp up \
+          --name lrf-container \
+          --resource-group ${{ secrets.ACR_RESOURCE_GROUP }} \
+          --image ${{ secrets.ACR_LOGIN_SERVER }}/${{ secrets.IMAGE_NAME }}:${{ secrets.IMAGE_VERSION_ONE }} \
+          --registry-server ${{ secrets.ACR_LOGIN_SERVER }} \
+          --registry-username ${{ secrets.ACR_USERNAME }} \
+          --registry-password ${{ secrets.ACR_PASSWORD }} \
+          --target-port 8081 \
+          --ingress external
