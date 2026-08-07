@@ -40,11 +40,24 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
+      - name: Create Environment if didn't exits
+        run: |
+          if az containerapp env show --name togo-environment --resources-group ${{ secrets.ACR_RESOURCE_GROUP }} > /dev/null 2>&1; then
+            echo "Environment exits, Skipping environment creation"
+          else 
+            echo "Environment doesn't exists, Creating..."
+            az containerapp env create \
+            --name togo-environment \
+            --resource-group ${{ secrets.ACR_RESOURCE_GROUP }} \
+            --location southeastasia
+          fi
+
       - name: Deploy into container
         run: |
           az containerapp up \
           --name lrf-container \
           --resource-group ${{ secrets.ACR_RESOURCE_GROUP }} \
+          --environment togo-environment \
           --location southeastasia \
           --image ${{ secrets.ACR_LOGIN_SERVER }}/${{ secrets.IMAGE_NAME }}:${{ secrets.IMAGE_VERSION_ONE }} \
           --registry-server ${{ secrets.ACR_LOGIN_SERVER }} \
