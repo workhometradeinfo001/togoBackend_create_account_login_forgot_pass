@@ -72,6 +72,3 @@ jobs:
             AMQPADDRESS="${{ secrets.AMQPADDRESS }}" \
             MAILFORSEND="${{ secrets.MAILFORSEND }}" \
             PASSMAILAPP="${{ secrets.PASSMAILAPP }}"
-
-      - name: After Successull
-        run: echo "Success"
