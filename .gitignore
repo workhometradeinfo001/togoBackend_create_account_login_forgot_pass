@@ -22,6 +22,7 @@ target/
 /src/main/resources/application-dev.yaml
 /src/main/resources/application-prod.yaml
 /src/main/resources/yaml-files
+/.github/workflows/whitelist-outbonds-ips.yaml
 
 ### NetBeans ###
 /nbproject/private/
