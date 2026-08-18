@@ -18,9 +18,9 @@ public class CorsConfig {
                 registry.addMapping("/**")
                         //Frontend side
                         .allowedOrigins("http://localhost:5173")
-                        .allowedOrigins("https://lrf-container.ambitiousmoss-49f2f168.southeastasia.azurecontainerapps.io")
+                        .allowedOrigins("https://fron-end-react-container.ambitiousmoss-49f2f168.southeastasia.azurecontainerapps.io")
                         //Api Call
-                        .allowedMethods("GET", "POST", "DELETE", "UPDATE", "OPTION")
+                        .allowedMethods("GET", "POST", "DELETE", "PUT", "OPTIONS")
                         //Auth of JWT
                         .allowedHeaders("*")
                         //For cookie or HttpSecure session
