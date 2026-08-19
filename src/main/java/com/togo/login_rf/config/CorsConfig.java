@@ -21,8 +21,7 @@ public class CorsConfig {
                 WebMvcConfigurer.super.addCorsMappings(registry);
                 registry.addMapping("/**")
                         //Frontend side
-                        .allowedOrigins("http://localhost:5173")
-                        .allowedOrigins(frontEndOrigin)
+                        .allowedOrigins("http://localhost:5173", frontEndOrigin)
                         //Api Call
                         .allowedMethods("GET", "POST", "DELETE", "PUT", "OPTIONS")
                         //Auth of JWT

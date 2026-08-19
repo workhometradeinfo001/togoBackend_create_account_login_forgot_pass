@@ -16,12 +16,13 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/forgotPass")
 @RequiredArgsConstructor
+@CrossOrigin(origins ="http://localhost:5173")
 @Slf4j
 public class ForgotPassController {
 
     private final ForgotPassService forgotPassService;
 
-    @GetMapping
+    @GetMapping("code-verify")
     public ResponseEntity<?> emailCheckWithCode(@RequestParam("email") String email){
         Optional<ForgotPassRecord> findingResult = forgotPassService.findingEmail(email);
         if (findingResult.isPresent()){
@@ -33,7 +34,6 @@ public class ForgotPassController {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-
 
     @PostMapping("/update_pass")
     public ResponseEntity<HttpStatus> changePassword(
